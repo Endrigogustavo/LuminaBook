@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import com.luminebook.lumine.service.service;
 import com.luminebook.lumine.model.livroSchema;
-import com.luminebook.lumine.model.livroSchema.Livro;
 
 @RestController
 public class controller {
@@ -21,9 +20,8 @@ public class controller {
     }
 
     @PostMapping("/livro")
-        public ResponseEntity<livroSchema> saveLivro(@RequestBody livroSchema livro) {
-            livroSchema savedLivro = service.saveLivro(livro);
-        return ResponseEntity.ok(savedLivro);
+    public livroSchema criarLivro(@RequestBody livroSchema livro) {
+        return service.saveLivro(livro);
     }
 
 }

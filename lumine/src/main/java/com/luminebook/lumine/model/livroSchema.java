@@ -3,22 +3,27 @@ package com.luminebook.lumine.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import lombok.Data;
-
+@Document(collection = "livros")
 public class livroSchema {
-    @Data
-    @Document(collection = "livros")
-    public class Livro {
-        @Id
-        private String id;
-        private String titulo;
+
+    @Id
+    private String id;
+    private String titulo;
+
+    public String getId() {
+        return id;
     }
 
-    @Data
-    @Document(collection = "autor")
-    public class autor {
-        private String nome;
-        private String email;
-        private String telefone;
+    public void setId(String id) {
+        this.id = id;
     }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
 }
